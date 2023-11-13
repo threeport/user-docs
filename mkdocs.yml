@@ -43,7 +43,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/qleet
+      link: https://github.com/threeport
 
 markdown_extensions:
   - admonition
