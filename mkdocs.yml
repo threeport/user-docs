@@ -16,6 +16,7 @@ nav:
     - 'Threeport Controllers': 'architecture/threeport-controllers.md'
     - 'Kubernetes Federation': 'architecture/kubernetes-federation.md'
     - 'Software Delivery': 'architecture/software-delivery.md'
+    - 'Orchestration Abstractions': 'architecture/orchestration-abstractions.md'
 
 theme:
   name: material
