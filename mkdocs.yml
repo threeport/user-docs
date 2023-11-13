@@ -1,7 +1,7 @@
 site_name: Threeport User Documentation
-site_author: Qleet.io
-repo_url: https://github.com/qleet/user-docs
-repo_name: qleet/user-docs
+site_author: Qleet Engineering
+repo_url: https://github.com/threeport/user-docs
+repo_name: threeport/user-docs
 edit_uri: blob/main/docs/
 
 nav:
@@ -20,19 +20,19 @@ nav:
 theme:
   name: material
   favicon: img/favicon.ico
-  logo: img/logo.png
+  logo: img/threeport-logo.png
   features:
     - content.code.copy
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: teal
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: teal
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
