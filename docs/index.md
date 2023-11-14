@@ -1,52 +1,34 @@
 # Threeport
 
-Threeport is an application orchestration platform developed by Qleet, Inc.  It
-is powered by a distributed, application-centric control plane that manages the
-following in response to app requirements:
+Threeport is an application orchestrator and software delivery control plane.
+It allows a user to define a workload and declare its dependencies,
+orchestrating the delivery of the workload with all of those dependencies
+connected and available.
+
+As an alternative to continuous delivery pipelines that use git as the source
+of truth, Threeport stores state in a database instead of git. It leverages
+software controllers that access the database and reconcile the desired state
+to gracefully manage delivery, eliminating the need for sprawling DevOps tools
+and configuration languages.
+
+Furthermore, Threeport provides a unified, global control plane for workloads.
+It functions as an orchestration system that manages cloud provider
+infrastructure and the software utilizing it across any region, all through a
+single, scalable control plane.
+
+Threeport treats the following concerns as application dependencies:
 
 * infrastructure
 * container orchestration
 * installed supporting services
 * infra provider managed services
 
-With Threeport you provide a definition for your application that includes a
-declaration of its dependencies, and Threeport orchestrates all those
-dependencies and runs your app.
+The Threeport control plane shown below consists of a RESTful API and a
+collection of controllers that reconcile the state provided by users.  The
+controllers perform reconciliation by interfacing with infrastructure service
+provider APIs and the Kubernetes API.
 
 ![Threeport Stack](img/ThreeportStack.png)
-
-## What Threeport Is
-
-Threeport is a global abstraction layer.  To illustrate, let's examine the
-abstractions that sit below it.
-
-### Linux
-
-Linux is an operating system for a single machine.  It provides abstractions for
-the devices on a computer.  It allows us to write programs without integrating
-directly with the underlying hardware.  The Unix operating systems enabled the
-explosion of monolithic software.
-
-![Monolithic Computing](img/MonolithicComputingSolution.png)
-
-### Kubernetes
-
-Kubernetes is an operating system for a datacenter of machines.  It provides
-abstractions for running containers across clusters of Linux machines.  It
-allows us to manage software deployments at scale.  Kubernetes has enabled the
-explosion of distributed software.
-
-![Distributed Computing](img/DistributedComputingSolution.png)
-
-### Threeport
-
-Threeport is an application orchestration platform.  It provides abstractions
-for Kubernetes clusters and infrastructure providers.  It allows us to manage
-software systems in any region for any supported infra provider through a single
-control plane.  Threeport is designed to enable the coming explosion of
-decentralized and globally distributed software systems.
-
-![Decentralized Computing](img/DecentralizedComputingSolution.png)
 
 ## What Threeport Is Not
 
@@ -84,7 +66,6 @@ In order to integrate Threeport, simply add a call to the Threeport control
 plane to notify it of a new build of a container image at the end of your CI
 process.  Threeport will perform the delivery of the new version into the
 appropriate environment/s.
-
 
 ## Summary
 
