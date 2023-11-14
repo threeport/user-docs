@@ -1,20 +1,20 @@
 # Threeport
 
 Threeport is an application orchestrator and software delivery control plane.
+It allows a user to define a workload and declare its dependencies,
+orchestrating the delivery of the workload with all of those dependencies
+connected and available.
 
-Threeport allows a user to define a workload and declare its dependencies.
-Threeport orchestrates the delivery of the workload with all of those
-dependencies connected and available.
+As an alternative to continuous delivery pipelines that use git as the source
+of truth, Threeport stores state in a database instead of git. It leverages
+software controllers that access the database and reconcile the desired state
+to gracefully manage delivery, eliminating the need for sprawling DevOps tools
+and configuration languages.
 
-Threeport provides an alternative to continuous delivery pipelines that use git
-as the source of truth.  Threeport stores state in a database instead of git.
-It uses software controllers that access the database and reconcile the desired
-state to gracefully manage delivery.  This alleviates the need for sprawling
-DevOps tools and config languages.
-
-Threeport provides a unified, global control plane for workloads.  It is an
-orchestration system for managing cloud provider infrastructure and the software
-that uses it in any region, through a single, scalable control plane.
+Furthermore, Threeport provides a unified, global control plane for workloads.
+It functions as an orchestration system that manages cloud provider
+infrastructure and the software utilizing it across any region, all through a
+single, scalable control plane.
 
 Threeport treats the following concerns as application dependencies:
 
