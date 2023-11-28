@@ -30,13 +30,16 @@ To run this command, the following flags must be provided:
 - `--aws-account-id` - the external AWS account to grant access to.
 
 
-Here is an example of the complete command:
+Here is an example of the complete command.  This command configures permissions
+for the Threeport control plane in AWS Account #1 from the diagram above to
+manage resources in AWS Account #2.
+
 ```bash
 tptctl config aws-account \
 --aws-account-name my-account \
 --aws-region us-east-1 \
 --aws-profile my-profile \
---aws-account-id 0123456789
+--aws-account-id 111111111
 ```
 
 Upon completion of the above command, you will be able to create Kubernetes runtime
