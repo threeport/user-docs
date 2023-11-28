@@ -20,21 +20,7 @@ View the site at [http://127.0.0.1:8000](http://127.0.0.1:8000/)
 
 
 ## Release
-Run `release` target
-```bash
-make release
-```
 
-### Help
+Changes will be deployed to live [documentation
+site](https://docs.threeport.io/) when PRs are merged to main.
 
-```text
-$ make
-Usage: make COMMAND
-Commands :
-help    - List available tasks
-deps    - Install dependencies
-run     - Run mkdocs
-stop    - Stop mkdocs
-release - Create and push a new tag
-version - Print current version(tag)
-```
