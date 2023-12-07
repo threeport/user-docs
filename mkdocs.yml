@@ -8,6 +8,10 @@ nav:
   - Threeport: 'index.md'
   - Guides:
     - 'guides/getting-started.md'
+    - 'guides/install-tptctl.md'
+    - 'guides/install-threeport-local.md'
+    - 'guides/deploy-workload-local.md'
+    - 'guides/install-threeport-aws.md'
     - 'guides/remote-kubernetes-runtime.md'
     - 'guides/aws-iam.md'
     - 'guides/aws-cross-account-access.md'
