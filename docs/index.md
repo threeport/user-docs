@@ -79,7 +79,7 @@ dependencies.
 
 Similarities:
 
-* Both Threerport and Radius have a strong emphasis on providing developer
+* Both Threeport and Radius have a strong emphasis on providing developer
   abstractions that allow workloads to be deployed _with_ their dependencies,
   such as managed services like AWS RDS and S3.  Radius' workload and dependency
   management capabilities are more mature than in Threeport.
