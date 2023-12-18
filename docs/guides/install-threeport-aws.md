@@ -1,4 +1,4 @@
-# Install Threerpot on AWS
+# Install Threeport on AWS
 
 This guide provides instructions to install Threeport on
 [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).  We will spin up
