@@ -67,6 +67,110 @@ plane to notify it of a new build of a container image at the end of your CI
 process.  Threeport will perform the delivery of the new version into the
 appropriate environment/s.
 
+## Comparable Projects
+
+Following is a comparison between Threeport and some other open source projects
+to help illustrate where Threeport fits in.
+
+### Radius
+
+[Radius](https://radapp.io/) helps teams manage cloud native application
+dependencies.
+
+Similarities:
+
+* Both Threerport and Radius have a strong emphasis on providing developer
+  abstractions that allow workloads to be deployed _with_ their dependencies,
+  such as managed services like AWS RDS and S3.  Radius' workload and dependency
+  management capabilities are more mature than in Threeport.
+* Both Threeport and Radius are fundamentally multi-cloud systems.  Threeport
+  only supports AWS today - but it is designed to have other cloud provider
+  support plugged in.  Radius offers support for AWS and Azure today.
+* Both Threeport and Radius aim to provide a platform for collaboration between
+  developers and other IT operators.  Developers need ways to smoothly leverage
+  the expertise offered by other teams with minimal friction.
+
+Differences:
+
+* Radius is an extension of the Kubernetes control plane.  The Threeport control
+  plane is a distinct control plane with its own APIs.  The Threeport control
+  plane supports greater scalability and geo-redundancy than Kubernetes so as to
+  serve as a global control plane for all clusters under management.
+* Radius does not manage Kubernetes clusters.  To get started with Radius, you
+  must have a Kubernetes cluster.  In contrast, Threeport manages Kubernetes
+  clusters as runtime dependencies.
+* Threeport manages support services that must be installed on Kubernetes as
+  application dependencies.  Examples include network ingress routing, TLS
+  termination and DNS management.  These common support services are installed
+  and configured for tenant applications by Threeport.  With Radius, these
+  services can be installed but aren't managed as dependencies, per se.
+
+Radius and Threeport have very complimentary characteristics and could be
+combined well.
+
+### Crossplane
+
+[Crossplane](https://www.crossplane.io/) provides a framework for building
+customizations to the Kubernetes control plane.
+
+Similarities:
+
+* Both Threeport and Crossplane facilitate building custom application
+  platforms.
+* Threeport manages workload dependencies, such as managed services, as a
+  primary function.  Similar functionality can be built out with Crossplane.
+
+Differences:
+
+* Crossplane aims to build custom Kubernetes control planes without needing to
+  write code.  This is achieved with compositions that define new APIs with YAML.
+  In contrast, platform engineers extend Threeport by writing code.  We believe
+  that languages like Go are a better choice for implementing sophisticated
+  software systems.  As such, we are working on an SDK that allows users to
+  build their custom implementations with Go, rather than with compositions
+  defined in YAML.
+* Crossplane is an extension of the Kubernetes control plane.  The Threeport control
+  plane is a distinct control plane with its own APIs.  The Threeport control
+  plane supports greater scalability and geo-redundancy than Kubernetes so as to
+  serve as a global control plane for all clusters under management.
+
+Crossplane and Threeport could be used in conjunction by using Threeport to
+provision and manage Kubernetes with Crossplane extensions.  However, there are a
+lot of overlapping concerns between projects.  Building an application platform
+using both projects would introduce more complexity and unclear boundaries.
+
+### ArgoCD
+
+[Argo CD](https://argoproj.github.io/cd/) is a modern Kubernetes-native
+continuous delivery system.
+
+Similarities:
+
+* Both ArgoCD and Threeport manage software delivery.
+
+Differences:
+
+* ArgoCD supports various DevOps tools to be used in workflows to execute the
+  steps needed to deliver software.  Threeport instead uses software
+  controllers to manage software delivery.  With ArgoCD you can get a delivery
+  pipeline up and running pretty quickly.  The challenge is maintainability when
+  complexity increases.  When using Helm charts with Kustomize overlays for
+  sophisticated distributed applications, the complexity overhead can become
+  quite a burden.  Threeport advocates using code in a software controller
+  instead of config languages in a pipeline.  This means more work up-front and
+  changes to the delivery system are a bit more involved.  However, this
+  approach improves the maintainability of complex delivery systems.
+* ArgoCD generally pulls configuration from Git repos and applies them to
+  Kubernetes clusters.  Threeport uses a relational database to store config
+  which provides more efficient access to software controllers that need to both
+  read and write configuration details.
+
+ArgoCD and Threeport could be used in conjunction by using Threeport to
+provision and manage Kubernetes clusters with ArgoCD.  However, similar to
+Crossplane, there are a lot of overlapping concerns between the projects.  Using
+Crossplane and ArgoCD together make far more sense than using Threeport with
+either Crossplane or ArgoCD.
+
 ## Summary
 
 Fundamentally, Threeport exists to reduce engineering toil and increase resource
@@ -76,15 +180,16 @@ costs.
 
 It is designed and built upon the following principles:
 
-* Workloads should not be platform aware.  Rather, platforms should be workload
-  aware and provide application dependencies all the way down to the
-  infrastructure when, and only when, they are needed by the workload.
-* Sophisticated Kubernetes application platforms should be as easy to use as a
-  developer workstations.
-* Software supply chains should be API-driven and the persistence layer for
-  configuration should be stored in a database rather than a git repo.  Software
-  delivery is most reliably handled by level-triggered controllers rather than
-  disparate toolchains.
+* General purpose programming languages like Go are superior to DSLs and
+  templates for defining the behavior of complex systems.  Threeport makes it as
+  easy as possible to extend it with custom controllers.
+* Use progressive disclosure in the abstractions available to users.  Dead
+  simple use cases should be trivial to configure and execute.  However, complex
+  use cases should be supported by allowing users greater level of
+  configurability in the underlying systems when needed.
+* Git repos are not great for storing the configuration of complex systems.  For
+  a system that is driven by software controllers, a database is more efficient
+  for both reads and writes by those controllers.
 
 If you'd like to try it out, visit our [getting started
 guide](guides/getting-started/).
