@@ -56,7 +56,7 @@ installed, you can update your kubeconfig
 with:
 
 ```bash
-aws eks update-kubeconfig --name threeport-test
+aws eks update-kubeconfig --name threeport-test --region [aws region]
 ```
 
 Then, view the Threeport control plane pods with kubectl:
@@ -65,13 +65,11 @@ Then, view the Threeport control plane pods with kubectl:
 kubectl get pods -n threeport-control-plane
 ```
 
-<!---
 ## Next Steps
 
 Next, we suggest you deploy a sample workload to AWS using Threeport.  It will
 give you clear idea of Threeport's dependency management capabilities.  See our
 [Deploy Workload on AWS guide](deploy-workload-aws.md) for instructions.
---->
 
 ## Clean Up
 
