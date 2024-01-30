@@ -360,17 +360,14 @@ Delete the wordpress workload instance.
 tptctl delete workload-instance -n wordpress
 ```
 
-Delete the Gloo Gateway workload instance.
+If you used a `DomainName` config, ensure your DNS records have been removed (it
+can take a minute or two for external-dns to clean those up), then delete the
+gloo-dege and external-dns workloads.
+
+Delete the Gloo Gateway and external-dns workload instances.
 
 ```bash
 tptctl delete workload-instance -n gloo-edge-threeport-test # name may differ
-```
-
-If you used a `DomainName` config, ensure your DNS records have been removed (it
-can take a minute or two for external-dns to clean those up), then delete the
-external-dns workload.
-
-```bash
 tptctl delete workload-instance -n external-dns-threeport-test # name may differ
 ```
 
@@ -378,8 +375,8 @@ Uninstall Threeport:
 
 Give Threeport a few minutes to clean up your AWS resources, then remove the
 control plane.  If you delete the control plane before it has finished removing
-the AWS RDS instance, for example, you may be left with dangling resources in
-AWS.
+the gloo-edge service resource, you will be left with a dangling AWS load
+balancer which will prevent tearing down all of the AWS infra.
 
 ```bash
 tptctl down -n test
