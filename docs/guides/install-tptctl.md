@@ -17,7 +17,7 @@ Otherwise, look up the version at the [releases
 page](https://github.com/threeport/releases/releases) and set it like so:
 
 ```bash
-TPTCTL_VERSION=v0.3.4  # substitute latest version
+TPTCTL_VERSION=v0.4.1  # substitute latest version
 ```
 
 ## Download

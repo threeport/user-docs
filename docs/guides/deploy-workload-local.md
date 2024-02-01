@@ -3,6 +3,13 @@
 In this guide, we're going to use the simplest possible mechanism to deploy an
 app.  It uses a very basic workload config.
 
+## Prerequisites
+
+You'll need a local Threeport control plane for this guide.  Follow the [Install
+Threeport Locally guide](install-threeport-local.md) to set that up.
+
+## Configs
+
 First, create a workspace on your local filesystem:
 
 ```bash
@@ -35,7 +42,7 @@ manifests.  Download that file as well:
 curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/wordpress-manifest-local.yaml
 ```
 
-### Create Workload
+## Create Workload
 
 We can now create the workload as follows:
 

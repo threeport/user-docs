@@ -13,6 +13,7 @@ nav:
     - 'guides/deploy-workload-local.md'
     - 'guides/install-threeport-aws.md'
     - 'guides/remote-kubernetes-runtime.md'
+    - 'guides/deploy-workload-aws.md'
     - 'guides/aws-iam.md'
     - 'guides/aws-cross-account-access.md'
   - Architecture:
