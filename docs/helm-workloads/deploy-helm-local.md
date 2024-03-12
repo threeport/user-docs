@@ -8,7 +8,7 @@ using Threeport.
 You'll need a local Threeport control plane for this guide.  Follow the [Install
 Threeport Locally guide](../../install/install-threeport-local) to set that up.
 
-## Configs
+## Create Helm Workload Definition
 
 First, create a work space on your local file system:
 
@@ -20,8 +20,8 @@ cd threeport-helm-test
 Download a sample helm workload config and values file as follows:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-definition.yaml
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-definition-values.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-definition.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-definition-values.yaml
 ```
 
 The helm workload config looks as follows:
@@ -49,8 +49,6 @@ replicaCount: 2
 This means that, unless otherwise specified on the instance, 2 replicas of the
 WordPress app will be created.
 
-## Create Helm Workload Definition
-
 We can now create the workload as follows:
 
 ```bash
@@ -71,7 +69,7 @@ inherited from the upstream defaults.
 Download the instance config:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-instance-default.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-default.yaml
 ```
 
 This config simply references the definition and adds no runtime parameters
@@ -126,8 +124,8 @@ case we'll simulate a dev instance that has some helm values as runtime
 parameters.  Download the config and values file:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-instance-dev.yaml
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-instance-dev-values.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-dev.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-dev-values.yaml
 ```
 
 The config for the dev instance looks similar to the default instance deployed
@@ -198,8 +196,8 @@ different label and also override the helm values provided in the definition.
 Download the config and values file:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-instance-prod.yaml
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload-instance-prod-values.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-prod.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-prod-values.yaml
 ```
 
 The instance config references the same definition and points to the new prod
@@ -284,7 +282,7 @@ If you would like to create a definition and instance in one step, you can do
 that too.  Download sample config.
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/helm/wordpress-helm-workload.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload.yaml
 ```
 
 This config includes the definition info, default helm values for the definition
@@ -324,6 +322,15 @@ We can also delete both with a single step as well.
 
 ```bash
 tptctl delete helm-workload --config wordpress-helm-workload.yaml
+```
+
+## Clean Up
+
+Before we finish, let's clean up the files we downloaded to your file system.
+
+```bash
+cd ../
+rm -rf threeport-helm-test
 ```
 
 ## Summary
