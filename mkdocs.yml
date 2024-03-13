@@ -43,6 +43,7 @@ nav:
       - 'Introduction': 'secrets/secrets-intro.md'
     - Observability:
       - 'Introduction': 'observability/observability-intro.md'
+      - 'Local Observability': 'observability/deploy-observability-local.md'
     - Control Planes:
       - 'Introduction': 'control-planes/control-plane-intro.md'
   - SDK:
