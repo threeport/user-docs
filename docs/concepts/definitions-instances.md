@@ -47,13 +47,13 @@ As a result, the user can then deploy a second instance of the object
 
 ## Division of Responsibility
 
-These constructs allow team leads and domain experts to define the attributes of
+These constructs allow team leads and domain experts to define the attributes
 for different objects.  Then, individual contributors can rapidly provision instances
 leveraging those detailed configs made available to them in Threeport.
 
 For example, the available definitions for AWS RDS database instances can be
 provided by a database expert for different tiers of usage, i.e. definitions
-for development, staging and production.  Then, when developers that use RDS as a
+for development, staging and production.  Then, when developers who use RDS as a
 part of their app stack need to deploy an application instance, they can
 reference the definition provided for them, rather than determining the config
 details themselves.

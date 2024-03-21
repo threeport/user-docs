@@ -1,7 +1,8 @@
 # Comparisons
 
-Following are some comparisons between Threeport and other projects and products
-for comparison.
+Following are some comparisons between Threeport and other projects and
+products.
+
 
 ## Kubernetes Distributions
 

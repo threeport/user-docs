@@ -7,7 +7,7 @@ every custom implementation possible.
 
 For this reason, Threeport provides a Golang SDK to extend the functionality of the
 system to any use case imaginable.  The Threeport SDK can be thought of as
-a platform engineering framework that is a Django or Ruby on Rails for building
+a platform engineering framework that is a like Django or Ruby on Rails for building
 cloud native application platforms.
 
 > Note: Threeport is written in Go and the SDK currently only supports
@@ -36,7 +36,7 @@ This results in the following:
 
 Threeport exists to solve this problem.  It provides a framework and software
 development kit for building custom cloud native application platforms without
-starting from scratch.  This enables collaborations between organization on the
+starting from scratch.  This enables collaboration between organizations on the
 same or similar problem sets, reduces the expense in creating such a platform,
 is infinitely extensible by design and allows platform engineers to transfer
 their skills between different organizations and implementations built atop

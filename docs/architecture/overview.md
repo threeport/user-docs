@@ -80,12 +80,15 @@ about the control plane.
 ## Compute Space
 
 The compute space is simply the compute environments where the user's
-applications run.  Threeport is a natively multi-cluster orchestrator.
-Therefore any number of environments in any region on any supported cloud provider
-can be managed with a single Threeport control plane.
+applications run.  Threeport is a natively multi-cluster orchestrator so the
+compute space includes all the Kubernetes clusters hosting workloads.
+Any number of environments in any region on any supported cloud provider
+can be managed be a part of the compute space and managed with a single
+Threeport control plane.
 
-> Note: Today, AWS is the only supported cloud provider, but support for
-> others will be added.
+> Note: Today, AWS is the only supported cloud provider and Kubernetes is the
+> only supported runtime.  However, we plan to add additional providers and
+> runtimes in the future.
 
 ![Threeport Compute Space](../img/ThreeportComputeSpace.png)
 
@@ -121,10 +124,10 @@ A Threeport control plane can also be installed locally on a user's
 workstation using [kind](https://kind.sigs.k8s.io/) for local testing and
 development.  See our [Local Threeport
 guide](../../install/install-threeport-local) for instructions on installing
-Threeport locally.
-
-The user can now deploy other Kubernetes clusters using Threeport for their
-tenant workloads, or use the same cluster.
+Threeport locally.  With a local Threeport control plane, the user can then
+deploy Kubernetes clusters in the cloud and deploy workloads there.  However,
+this is only recommended for testing and development.  Don't use local Threeport
+control planes to run important production workloads.
 
 > Note: The libraries used to deploy a Kubernetes environment for bootstrapping
 > with `tptctl` are the same as those used by the Threeport controller to

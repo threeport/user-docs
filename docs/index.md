@@ -31,9 +31,6 @@ Following is a common scenario for a developer workflow using Threeport:
 0. Developer pushes code to GitHub.
 0. The CI actions run (GitHub actions in this case) and produce a container image that is
    pushed to a registry such as Docker Hub or GitHub Container Registry.
-0. The developer uses the Threeport CLI tool `tptctl` to install Threeport on AWS.
-   It takes just one command to do so.  It will install an EKS cluster on AWS
-   and install the Threeport control plane on it.
 0. The developer uses `tptctl` to deploy their workload.  This makes a call to
    the Threeport API and triggers the control plane to deploy the app.
    Threeport will call the Kubernetes API to deploy the Kubernetes resources.
@@ -54,7 +51,7 @@ developers need to deliver.  Most Threeport objects have two components: a
 definition and instance.  The definition provides the configuration.  The
 instance uses a small number of runtime parameters and references the definition
 to spin up the resources required.  Learn more about definitions and instances
-in [this document](concepts/definitions-instances.md).
+in the [Concepts section](concepts/definitions-instances.md).
 
 ![Threeport for DevOps](img/ThreeportForDevOps.png)
 
@@ -90,14 +87,14 @@ applications.
 The process for optimizing application delivery with platform engineering looks
 something like this:
 
-0. A platform engineering team uses the Threeport SDK to build extensions to the
-   Threeport control plane.  This code for this extensions lives in its own
+0. A platform engineering team uses the Threeport SDK to build an extension to the
+   Threeport control plane.  The code for this extension lives in its own
    git repo.  Experienced Go programmers with a sound understanding of
    Kubernetes and Threeport can usually produce a POC within a couple of weeks,
    even faster for simpler use cases.
 0. The primary asset produced from the project's CI pipeline is a container
    image for the Threeport controller that understands the needs of the custom
-   workload managed by a dev team.
+   workload.
 0. The custom controller is deployed with the rest of the Threeport control
    plane.  Threeport is now extended to include intelligent management of
    instances of the custom workload.
@@ -114,13 +111,15 @@ something like this:
    for assets to be processed.  DNS records are created in a Route53 hosted zone
    to provide a domain name for connection to the load balancer's IP.
 
-## Managed Threeport
+## Next Steps
 
-Threeport itself is a complex distributed software system that is trivial to
-deploy for testing and development, but non-trivial to manage, upgrade, maintain
-and troubleshoot when problems arise.
+Check out the [Getting Started guide](getting-started) to try out Threeport
+for yourself.
 
-[Qleet](https://qleet.io/) is currently the only service provider that offers
-fully managed Threeport control planes.  The originators, developers and
-maintainers of the Threeport project are on the engineering team at Qleet.
+See our [Application Orchestration
+document](concepts/application-orchestration) in our Concepts section for more
+information on how Threeport approaches software delivery.
+
+To dive into the architecture of Threeport, see the [Architecture Overview
+document](architecture/overview)
 

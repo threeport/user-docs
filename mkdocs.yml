@@ -8,6 +8,7 @@ nav:
   - Threeport: 'index.md'
   - Getting Started: 'getting-started.md'
   - FAQ: 'faq.md'
+  - Managed Threeport: 'managed-threeport.md'
   - Concepts:
     - 'Application Orchestration': 'concepts/application-orchestration.md'
     - 'Orchestration Abstractions': 'concepts/orchestration-abstractions.md'

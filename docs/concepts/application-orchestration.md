@@ -22,16 +22,16 @@ Threeport treats the following concerns as application dependencies:
   to provide things like network connectivity, TLS termination, DNS record
   management, secrets, metrics and log aggregation.  Threeport installs and
   configures these support services for each application deployed.
-* Managed Services: Many applications use cloud provider managed services such
-  as databases and object stores as a part of their app stack.  Threeport
-  orchestrates the provisioning and connectivity for the application's workloads
-  to make these managed services available.
+* Managed Services: Many applications use cloud provider and/or commercial
+  managed services such as databases or observability services as a part of
+  their stack.  Threeport orchestrates the provisioning and connectivity for
+  the application's workloads to make these managed services available.
 
-The ultimate end-user of Threeport is the developer that needs to deploy an
-instance of their application - for development, testing, staging or production.
-The developer provides a config for their app that declares its dependencies.
-Threeport orchestrates the delivery of the application workloads along with all
-their dependencies.
+The ultimate end-user of Threeport is the developer or operator that needs to
+deploy and manage instances of their applications - for development, testing,
+staging or production. The user provides a config for their app that declares
+its dependencies.  Threeport orchestrates the delivery of the application
+workloads along with all their dependencies.
 
 ![Threeport Developer Experience](../img/ThreeportDevExperience.png)
 
@@ -82,10 +82,19 @@ Kustomize make it challenging just to figure out where values are being set.
 And since such pipelines are difficult to test before use, they tend to be
 brittle and interrupt day-to-day operations.
 
+This complexity is compounded when using multiple inter-dependent workloads in a
+microservices architecture.  The configuration to connect those components must
+be supplied as inputs to the pipeline, adding more config vars that apply in
+multiple places inside a maze of templates, overlays and configs.
+
 The complexity is increased further if there are controllers in your system that update
 resource configurations that have been defined in a config repo.  You then have
 to either tell your GitOps engine to ignore some changes or push those changes
 back into the code repo from your runtime environment.
+
+In summary, GitOps is OK early in early development.  However, it becomes entirely
+inelegant as complexity scales up - as it inevitably does when the realities of
+production hit and as requirements for your software accumulate.
 
 ## Software Delivery Orchestration with Threeport
 
@@ -96,7 +105,7 @@ maintainable and can have comprehensive automated testing applied to maintain re
 and backward compatibility.  They are great for writing APIs that enable further
 software interoperability.
 
-We chose Go to build Threeport.  It exposes a RESTful API that can be called through
+We chose Go to build Threeport.  It exposes a RESTful API that can be called
 through our CLI `tptctl` or by any application that can call an API over HTTP.  It stores
 state in a relational database and uses controllers to reconcile state for
 objects defined by users.
@@ -146,8 +155,8 @@ Threeport.
    by the developer to deploy instances.
 1. The developer merges changes that trigger a CI process using, for example,
    GitHub Actions.  This typically runs automated tests and build processes.
-1. The final build artifact is generally a container image that is pushed to an
-   image registry to become available to run in an environment.
+    1. The final build artifact is generally a container image that is pushed to an
+       image registry to become available to run in an environment.
 1. The developer can now trigger a deployment of an instance of that
    application.
     1. In the near future, updates from GitHub Actions will be available.  This
