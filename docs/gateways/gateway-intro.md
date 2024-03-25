@@ -5,7 +5,7 @@ ingress into the Kubernetes Runtime to route traffic to a workload that is
 exposed to end users, usually from the public internet.
 
 When you declare a Gateway for your workload, Threeport installs and configures
-a [Gloo Gateway](https://github.com/solo-io/gloo) to manage incoming traffic.  A
+a [Gloo Edge](https://docs.solo.io/gloo-edge/latest/) to manage incoming traffic.  A
 cloud provider load balancer is also provisioned that provides a network
 endpoint and proxies traffic to Gloo.  Gloo terminates TLS connections and
 forwards connections to the appropriate workloads.
@@ -35,7 +35,7 @@ Reference:
 ## Gateway Instance
 
 The gateway instance allows you to tie the gateway config in the definition to a
-particular workload that prompts Threeport to deploy the Gloo Gateway support
+particular workload that prompts Threeport to deploy the Gloo Edge support
 service and configure it for the workload.
 
 Reference:
