@@ -136,7 +136,7 @@ Workload resource to configure the support service for that workload.
 
 ### Helm Workload Controller
 
-The helm workload controller uses the popular Kubernetes package manager,
+The Helm workload controller uses the popular Kubernetes package manager,
 [Helm](https://helm.sh/) to deploy workloads in Kubernetes.  Helm templates have
 drawbacks in complex environments since templating is inherently inferior to
 general purpose programming languages.  More on this topic is discussed in the
@@ -172,8 +172,8 @@ The following components are available to deploy as a part of the stack:
 * [Loki](https://github.com/grafana/loki): log storage.
 * [Grafana](https://github.com/grafana/grafana): observability dashboard.
 
-The observability controller leverages the helm workload controller to install
-helm charts to deploy each of these components.
+The observability controller leverages the Helm workload controller to install
+Helm charts to deploy each of these components.
 
 ### Secrets Controller
 
@@ -191,7 +191,7 @@ to running apps as needed by users.
 
 ### Terraform Controller
 
-The terraform controller uses [Terraform](https://www.terraform.io/) to
+The Terraform controller uses [Terraform](https://www.terraform.io/) to
 provision custom infrastructure needed by workloads.  Terraform is less than
 ideal for provisioning infrastructure in a control plane like Threeport for
 reasons discussed [elsewhere](../../concepts/application-orchestration#continuous-delivery-gitops)

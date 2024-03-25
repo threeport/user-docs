@@ -1,6 +1,6 @@
 # Deploy RDS Instance with Terraform
 
-In this guide, we're going to use a terraform definition and instance to deploy
+In this guide, we're going to use a Terraform definition and instance to deploy
 an instance of the AWS Relational Database Service (RDS) using Threeport.
 
 You'll need an active AWS account to follow this guide.
@@ -80,7 +80,7 @@ tptctl create aws-account --config default-aws-account.yaml
 
 ## Create Terraform Definition
 
-The terraform definition includes the terraform configs to deploy some AWS
+The Terraform definition includes the Terraform configs to deploy some AWS
 resources.
 
 Download a sample Threeport config.
@@ -186,7 +186,7 @@ If you go to the AWS RDS console, you'll shortly see the RDS instance being
 created.  Terraform takes a few minutes to initialize and deploy resources, so
 it won't be immediate.  Give it a little time.
 
-You can view your terraforms with this command:
+You can view your Terraforms with this command:
 
 ```bash
 tptctl get terraforms

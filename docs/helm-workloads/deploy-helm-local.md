@@ -1,6 +1,6 @@
 # Deploy Helm Workload Locally
 
-In this guide, we're going to use a helm workload to deploy a sample app locally
+In this guide, we're going to use a Helm workload to deploy a sample app locally
 using Threeport.
 
 ## Prerequisites
@@ -17,14 +17,14 @@ mkdir threeport-helm-test
 cd threeport-helm-test
 ```
 
-Download a sample helm workload config and values file as follows:
+Download a sample Helm workload config and values file as follows:
 
 ```bash
 curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-definition.yaml
 curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-definition-values.yaml
 ```
 
-The helm workload config looks as follows:
+The Helm workload config looks as follows:
 
 ```yaml
 HelmWorkloadDefinition:
@@ -34,12 +34,12 @@ HelmWorkloadDefinition:
   ValuesDocument: wordpress-helm-workload-definition-values.yaml
 ```
 
-This definition specifies Bitnami charts repo and the helm WordPress chart to be
+This definition specifies Bitnami charts repo and the Helm WordPress chart to be
 used by all instances derived from this definition.  It also references the
 values file that you download that has an override for the default number of
-replicas in that upstream helm chart:
+replicas in that upstream Helm chart:
 
-> Note: At this time, helm charts must be hosted in a helm repo to be used in
+> Note: At this time, Helm charts must be hosted in a Helm repo to be used in
 > Threeport.
 
 ```yaml
@@ -63,7 +63,7 @@ instances from this definition.
 ## Create Helm Workload Instances
 
 First let's create a instance a default instance.  In this case we're just using
-the helm chart with the default values `replicaCount: 2`.  All other values are
+the Helm chart with the default values `replicaCount: 2`.  All other values are
 inherited from the upstream defaults.
 
 Download the instance config:
@@ -82,13 +82,13 @@ HelmWorkloadInstance:
     Name: wordpress
 ```
 
-Create the default helm workload instance:
+Create the default Helm workload instance:
 
 ```
 tptctl create helm-workload-instance --config wordpress-helm-workload-instance-default.yaml
 ```
 
-Now you can view the helm workload you have running.
+Now you can view the Helm workload you have running.
 
 ```yaml
 tptctl get helm-workloads
@@ -119,8 +119,8 @@ wordpress-default-vpmmjfosws   wordpress-default-release-mariadb-0         1/1  
 As you can see, there are two replicas of the WordPress app and one instance of
 its database.
 
-Now let's create another helm workload instance from our definition.  In this
-case we'll simulate a dev instance that has some helm values as runtime
+Now let's create another Helm workload instance from our definition.  In this
+case we'll simulate a dev instance that has some Helm values as runtime
 parameters.  Download the config and values file:
 
 ```bash
@@ -152,7 +152,7 @@ We can now create the new instance.
 tptctl create helm-workload-instance --config wordpress-helm-workload-instance-dev.yaml
 ```
 
-Now, if we get the helm workload instances from the system we can see both
+Now, if we get the Helm workload instances from the system we can see both
 instances derived from the same definition.
 
 ```bash
@@ -191,7 +191,7 @@ own namespace which allows you to create as many instances in the same
 Kubernetes runtime as you need.
 
 Now, let's create one more instance for prod.  In this case we'll apply a
-different label and also override the helm values provided in the definition.
+different label and also override the Helm values provided in the definition.
 
 Download the config and values file:
 
@@ -225,7 +225,7 @@ We can now deploy the prod instance:
 tptctl create helm-workload-instance --config wordpress-helm-workload-instance-prod.yaml
 ```
 
-Now, when we view helm workloads we can see all 3 instances derived from the
+Now, when we view Helm workloads we can see all 3 instances derived from the
 same definition:
 
 ```bash
@@ -267,7 +267,7 @@ wordpress-prod-fqgiwndiur      wordpress-prod-release-mariadb-0            1/1  
 As you can see, due to the runtime parameters for the prod instance specifying 4
 replicas, there are 4 pods for the WordPress app.
 
-Before we move on, let's clean up the helm workloads we've deployed so far.
+Before we move on, let's clean up the Helm workloads we've deployed so far.
 
 ```bash
 tptctl delete helm-workload-instance -n wordpress-prod
@@ -285,8 +285,8 @@ that too.  Download sample config.
 curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload.yaml
 ```
 
-This config includes the definition info, default helm values for the definition
-as well as helm values for the instance.  It is referencing helm values
+This config includes the definition info, default Helm values for the definition
+as well as Helm values for the instance.  It is referencing Helm values
 documents we previously downloaded.
 
 ```yaml
@@ -298,13 +298,13 @@ HelmWorkload:
   InstanceValuesDocument: wordpress-helm-workload-instance-dev-values.yaml
 ```
 
-Now we can create a helm workload definition and instance with one command:
+Now we can create a Helm workload definition and instance with one command:
 
 ```bash
 tptctl create helm-workload --config wordpress-helm-workload.yaml
 ```
 
-If we get helm workloads we can see we now have a definition with an instance
+If we get Helm workloads we can see we now have a definition with an instance
 already derived from it.
 
 ```bash
@@ -335,8 +335,8 @@ rm -rf threeport-helm-test
 
 ## Summary
 
-In this guide we demonstrated how to use helm charts that are hosted on a helm
-repo to install helm workloads.  We created definitions and instances separately
+In this guide we demonstrated how to use Helm charts that are hosted on a Helm
+repo to install Helm workloads.  We created definitions and instances separately
 and also created a definition and instance with one step using the defined
 instance abstraction.
 
