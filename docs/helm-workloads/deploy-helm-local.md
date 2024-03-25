@@ -3,6 +3,18 @@
 In this guide, we're going to use a Helm workload to deploy a sample app locally
 using Threeport.
 
+First we'll create a definition and some instances from that definition.  After
+that, we'll deploy a Helm workload using the defined instance abstraction which
+creates a definition and instance in a single step.  If you prefer, jump
+straight to the [Helm Workload Defined Instance
+section](#helm-workload-defined-instance) for the quick intro.  If you would
+like a clearer understanding of how the definitions and instances work for Helm
+workloads, run through this document from beginning to end.
+
+See our [Definitions & Instances concepts document](
+../concepts/definitions-instances.md) for more details about definitions and
+instances in Threeport.
+
 ## Prerequisites
 
 You'll need a local Threeport control plane for this guide.  Follow the [Install
@@ -296,6 +308,13 @@ HelmWorkload:
   Chart: wordpress
   DefinitionValuesDocument: wordpress-helm-workload-definition-values.yaml
   InstanceValuesDocument: wordpress-helm-workload-instance-dev-values.yaml
+```
+
+If you haven't already, download the values documents referenced in the config.
+
+```bash
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-definition-values.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/helm/wordpress-helm-workload-instance-dev-values.yaml
 ```
 
 Now we can create a Helm workload definition and instance with one command:
