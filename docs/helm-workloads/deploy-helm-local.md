@@ -187,7 +187,7 @@ wordpress-dev-xsiqnjpkgd       wordpress-dev-release-mariadb-0             1/1  
 ```
 
 One thing you'll notice is that each time a new instance is created, it gets its
-own namespace which allows you to create as many instances in the same
+own [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which allows you to create as many instances in the same
 Kubernetes runtime as you need.
 
 Now, let's create one more instance for prod.  In this case we'll apply a
