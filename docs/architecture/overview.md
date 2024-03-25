@@ -129,11 +129,6 @@ deploy Kubernetes clusters in the cloud and deploy workloads there.  However,
 this is only recommended for testing and development.  Don't use local Threeport
 control planes to run important production workloads.
 
-> Note: The libraries used to deploy a Kubernetes environment for bootstrapping
-> with `tptctl` are the same as those used by the Threeport controller to
-> provision new Kubernetes environments using an existing Threeport control
-> plane.
-
 ## Foundational Principles
 
 Threeport is designed and built upon the following principles:
