@@ -7,7 +7,7 @@ that the Threeport API is deployed to.
 ## Prerequisites
 
 An instance of the Threeport is required to get started.  You can install a
-[Local Threeport](../install/install-threeport-local) instance and use it to
+[Local Threeport](../install/install-threeport-local.md) instance and use it to
 create a remote Kubernetes runtime.
 
 Note that EKS clusters are currently the only supported type of remote

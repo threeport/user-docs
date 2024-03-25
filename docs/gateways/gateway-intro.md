@@ -69,6 +69,6 @@ Reference:
 
 ## Next Steps
 
-See our [Deploy Workload on AWS guide](../../workloads/deploy-workload-aws) for
+See our [Deploy Workload on AWS guide](../workloads/deploy-workload-aws.md) for
 an example of how to use Gateways and Domain Names for your application.
 

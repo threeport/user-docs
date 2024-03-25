@@ -43,7 +43,7 @@ Reference:
 
 ## Next Steps
 
-We have a [Remote Kubernetes Runtime](../remote-kubernetes-runtime) guide that
+We have a [Remote Kubernetes Runtime](remote-kubernetes-runtime.md) guide that
 walks you through the creation of a Kubernetes cluster to use for your workloads
 in Threeport.
 

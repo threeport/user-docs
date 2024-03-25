@@ -6,7 +6,7 @@ app.  It uses a very basic workload config.
 ## Prerequisites
 
 You'll need a local Threeport control plane for this guide.  Follow the [Install
-Threeport Locally guide](../../install/install-threeport-local) to set that up.
+Threeport Locally guide](../install/install-threeport-local.md) to set that up.
 
 ## Configs
 
@@ -148,5 +148,5 @@ rm -rf threeport-test
 ## Next Steps
 
 Next, we recommend you try out Threeport on AWS.  See our [Install Threeport on
-AWS guide](install-threeport-aws.md) for instructions.
+AWS guide](../install/install-threeport-aws.md) for instructions.
 

@@ -6,7 +6,7 @@ using Threeport.
 ## Prerequisites
 
 You'll need a local Threeport control plane for this guide.  Follow the [Install
-Threeport Locally guide](../../install/install-threeport-local) to set that up.
+Threeport Locally guide](../install/install-threeport-local.md) to set that up.
 
 ## Create Helm Workload Definition
 

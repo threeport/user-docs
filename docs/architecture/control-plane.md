@@ -141,7 +141,7 @@ The Helm workload controller uses the popular Kubernetes package manager,
 drawbacks in complex environments since templating is inherently inferior to
 general purpose programming languages.  More on this topic is discussed in the
 [Continuous Delivery & GitOps
-section](../../concepts/application-orchestration#continuous-delivery-gitops)
+section](../concepts/application-orchestration.md#continuous-delivery-gitops)
 of the Application Orchestration document in another section of these Threeport
 docs.  We much prefer Go programs to construct Kubernetes resources, however,
 when Helm charts are available for open source projects and when they are in
@@ -194,7 +194,7 @@ to running apps as needed by users.
 The Terraform controller uses [Terraform](https://www.terraform.io/) to
 provision custom infrastructure needed by workloads.  Terraform is less than
 ideal for provisioning infrastructure in a control plane like Threeport for
-reasons discussed [elsewhere](../../concepts/application-orchestration#continuous-delivery-gitops)
+reasons discussed [elsewhere](../concepts/application-orchestration.md#continuous-delivery-gitops)
 but it is offered in Threeport for two reasons.  Many teams have made extensive
 use of Terraform and this allows them to use those configs in Threeport.  Also,
 Threeport offers native support for only a small number of AWS managed services
@@ -219,4 +219,4 @@ Threeport.
 ## Next Steps
 
 For a more depth of understanding in how Threeport controllers work, see our
-[Threeport Controllers architecture documentation](../threeport-controllers).
+[Threeport Controllers architecture documentation](threeport-controllers.md).

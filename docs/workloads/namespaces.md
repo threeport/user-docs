@@ -6,7 +6,7 @@ This is the recommended approach.
 ## Prerequisites
 
 For this guide you will need a Threeport control plane installed.  Follow the
-[Install Threeport Locally guide](install-threeport-local.md) to install a local
+[Install Threeport Locally guide](../install/install-threeport-local.md) to install a local
 control plane.
 
 ## Unmanaged Namespaces

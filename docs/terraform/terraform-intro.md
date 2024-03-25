@@ -43,6 +43,6 @@ Reference: [TerraformInstance](https://pkg.go.dev/github.com/threeport/threeport
 
 ## Next Steps
 
-Check out our [Deploy RDS Instance with Terraform guide](../rds-database) for a
+Check out our [Deploy RDS Instance with Terraform guide](rds-database.md) for a
 walk through on how to use Terraform in to provision cloud resources.
 

@@ -24,7 +24,7 @@ file system, you're likely already set up.
 
 Also, ensure you have the required permissions to create the necessary resources
 in AWS.  If your user has the built-in `AdministratorAccess` policy attached, you can
-continue.  Otherwise, check out our [AWS Permissions guide](../../aws/aws-iam)
+continue.  Otherwise, check out our [AWS Permissions guide](../aws/aws-iam.md)
 to make sure you can create the resources required to run a Threeport control plane.
 
 You also will need your AWS account ID.  It can be found in the AWS console.
@@ -69,7 +69,7 @@ kubectl get pods -n threeport-control-plane
 
 Next, we suggest you deploy a sample workload to AWS using Threeport.  It will
 give you clear idea of Threeport's dependency management capabilities.  See our
-[Deploy Workload on AWS guide](deploy-workload-aws.md) for instructions.
+[Deploy Workload on AWS guide](../workloads/deploy-workload-aws.md) for instructions.
 
 ## Clean Up
 

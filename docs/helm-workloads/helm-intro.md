@@ -13,7 +13,7 @@ production environments when the templates become overwhelmed with conditionals
 and loops.  In more advanced use-cases, we recommend using custom Kubernetes
 Operators and/or Threeport controllers to programmatically manage complex
 configuration of software delivery.  See our documentation on [Threeport
-Extensions](../../concepts/extensions/) for more information on
+Extensions](../concepts/extensions.md) for more information on
 this topic.
 
 > Note: In order to use Helm charts in Threeport, the chart must be hosted on a
@@ -41,6 +41,6 @@ Reference:
 
 ## Next Steps
 
-See our [Local Helm Workload guide](../deploy-helm-local) for a walk through on
+See our [Local Helm Workload guide](../helm-workloads/deploy-helm-local.md) for a walk through on
 using Helm in Threeport.
 

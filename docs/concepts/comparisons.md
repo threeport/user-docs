@@ -25,7 +25,7 @@ the platform team ahead of time.  They can be spun up on-demand by teams that
 need them.
 
 The core Threeport project does not support any particular vendor distro, but
-can be extended using the [Threeport SDK](../../sdk/sdk-intro) to support any
+can be extended using the [Threeport SDK](../sdk/sdk-intro.md) to support any
 distro as the provider of Kubernetes clusters.  With Threeport, the workflow is
 different:
 
@@ -137,7 +137,7 @@ Differences:
   write code.  This is achieved with compositions that define new APIs in YAML.
   In contrast, platform engineers extend Threeport by writing code.  We believe
   that languages like Go are a better choice for implementing sophisticated
-  software systems.  As such, we offer the [Threeport SDK](../../sdk/sdk-intro)
+  software systems.  As such, we offer the [Threeport SDK](../sdk/sdk-intro.md)
   that allows users to build their custom implementations with Go, rather than
   with compositions defined in YAML.
 * Crossplane is an extension of the Kubernetes control plane.  The Threeport control
@@ -185,8 +185,8 @@ either Crossplane or ArgoCD.
 ## Next Steps
 
 If you'd like to try out Threeport for yourself, visit our [getting started
-guide](../../getting-started).
+guide](../getting-started.md).
 
 If you'd like to learn about the architecture, check out our [architecture
-overview](../../architecture/overview).
+overview](../architecture/overview.md).
 

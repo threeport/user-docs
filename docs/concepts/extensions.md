@@ -159,6 +159,6 @@ on the specific business logic and implementation details they are building for.
 
 ## Next Steps
 
-Check out the [Threeport SDK Introduction](../../sdk/sdk-intro) to get started
+Check out the [Threeport SDK Introduction](../sdk/sdk-intro.md) to get started
 building with the Threeport SDK.
 

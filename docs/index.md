@@ -113,13 +113,13 @@ something like this:
 
 ## Next Steps
 
-Check out the [Getting Started guide](getting-started) to try out Threeport
+Check out the [Getting Started guide](getting-started.md) to try out Threeport
 for yourself.
 
 See our [Application Orchestration
-document](concepts/application-orchestration) in our Concepts section for more
+document](concepts/application-orchestration.md) in our Concepts section for more
 information on how Threeport approaches software delivery.
 
 To dive into the architecture of Threeport, see the [Architecture Overview
-document](architecture/overview)
+document](architecture/overview.md)
 

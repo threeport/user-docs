@@ -7,10 +7,10 @@ secret to that workload from a secret stored in AWS Secret Manager.
 
 You'll need a Threeport control plane for this guide.  You have two options:
 
-1. Install a [Local Threeport](../../install/install-threeport-local) instance and
+1. Install a [Local Threeport](../install/install-threeport-local.md) instance and
    then provision a [Remote Kubernetes
-   Runtime](../../kubernetes-runtime/remote-kubernetes-runtime) for your workload.
-1. Install a [Remote Threeport](../../install/install-threeport-aws) instance
+   Runtime](../kubernetes-runtime/remote-kubernetes-runtime.md) for your workload.
+1. Install a [Remote Threeport](../install/install-threeport-aws.md) instance
    on AWS and use the Kubernetes instance that is used to host Threeport to deploy
    your workload.
 

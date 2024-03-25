@@ -52,5 +52,5 @@ Reference:
 
 For more information about Threeport architecture to understand how Threeport
 works and how it is bootstrapped, see our [Architecture Overview
-document](../../architecture/overview)
+document](../architecture/overview.md)
 

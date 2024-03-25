@@ -7,10 +7,10 @@ with Threeport.
 ## Prerequisites
 
 You'll need a local Threeport control plane for this guide.  Follow the [Install
-Threeport Locally guide](../../install/install-threeport-local) to set that up.
+Threeport Locally guide](../install/install-threeport-local.md) to set that up.
 
 You'll also want to deploy a workload to get metrics and logs for.  Follow the
-[Deploy Workload Locally guide](../../workloads/deploy-workload-local) to deploy
+[Deploy Workload Locally guide](../workloads/deploy-workload-local.md) to deploy
 a sample WordPress app.
 
 > Note: for this guide, you will need to have

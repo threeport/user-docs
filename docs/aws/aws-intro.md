@@ -92,7 +92,7 @@ secret with the following keys:
 When constructing the Kubernetes resource manifest for the workload, configure
 your pods to retrieve these values from the specified secret as an environment
 variable.  If you're not sure how to do this, see our [Deploy Workload on AWS
-guide](../../workloads/deploy-workload-aws) for a detailed walk through of an app
+guide](../workloads/deploy-workload-aws.md) for a detailed walk through of an app
 on Kubernetes using an RDS database.
 
 Reference:
@@ -121,7 +121,7 @@ bucket for your workload.  This means you'll need to include a Kubernetes
 Service Account with a matching name in the Kubernetes manifests in the
 WorkloadDefinition for your workload that will use S3.  If you're unsure how to
 do this see our [Deploy Workload on AWS
-guide](../../workloads/deploy-workload-aws) for a detailed walk through of an app
+guide](../workloads/deploy-workload-aws.md) for a detailed walk through of an app
 on Kubernetes that also uses S3.
 
 Lastly, you'll need to provide the environment variable your workload will use
@@ -141,7 +141,7 @@ Reference:
 
 ## Next Steps
 
-Check out our [Deploy Workload on AWS guide](../../workloads/deploy-workload-aws)
+Check out our [Deploy Workload on AWS guide](../workloads/deploy-workload-aws.md)
 see an example of how to deploy a workload that is connected to an RDS database
 and S3 bucket.
 

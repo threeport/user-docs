@@ -59,13 +59,13 @@ Reference:
 
 > Note: You can also run multiple instances of a workload in a single Kubernetes
 > cluster if you use Threeport to manage Kubernetes namespaces.  See the
-> [Namespaces guide](../namespaces) for more info.
+> [Namespaces guide](namespaces.md) for more info.
 
 ## Next Steps
 
 In order to get a practical grasp on deploying Workloads, see our [Local
-Workload guide](../deploy-workload-local) to try it out on your workstation.
+Workload guide](deploy-workload-local.md) to try it out on your workstation.
 
 If you'd like to deploy a sample Workload into AWS using Threeport, see our
-[Remote Workload guide](../deploy-workload-aws).
+[Remote Workload guide](deploy-workload-aws.md).
 

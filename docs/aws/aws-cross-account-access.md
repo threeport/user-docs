@@ -5,7 +5,7 @@ Threeport control-planes can be configured to manage resources in a separate AWS
 ## Prerequisites
 
 - An instance of the Threeport API: Follow the [getting started
-guide](../getting-started/) to set one up if you have not already done so. Note that EKS
+guide](../getting-started.md) to set one up if you have not already done so. Note that EKS
 clusters are currently the only supported type of control plane instance that can
 authenticate to an external AWS account.
 

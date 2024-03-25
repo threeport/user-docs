@@ -40,7 +40,7 @@ globally distributed software systems.
 ## Next Steps
 
 To get a practical understanding of how Threeport orchestrates app delivery, see
-our [Getting Started page](../../getting-started) which provides the steps to
+our [Getting Started page](../getting-started.md) which provides the steps to
 install Threeport and use it to deploy a sample application.
 
 

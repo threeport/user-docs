@@ -132,7 +132,7 @@ pipeline-driven systems:
 * Threeport enables the use of custom controllers to provide customized
   functionality.  While Threeport supports the use of Helm and Terraform for
   those that want to start with those methods, we encourage the use of the
-  [Threeport SDK](../../sdk/sdk-intro)
+  [Threeport SDK](../sdk/sdk-intro.md)
   to build controllers that understand each particular custom use
   case.  These controllers can be maintained with unit tests and
   end-to-end tests.  Rather than templates with placeholders, software uses objects with
@@ -191,6 +191,6 @@ together to produce a running app.
 ## Next Steps
 
 To get a practical understanding of how Threeport manages delivery, check out
-our [Getting Started page](../../getting-started) which provides the steps to
+our [Getting Started page](../getting-started.md) which provides the steps to
 install Threeport and use it to deploy a sample application.
 

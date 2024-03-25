@@ -76,7 +76,7 @@ deployed to Kind and visiting
 ## Next Steps
 
 Next, we suggest you deploy a sample workload locally using Threeport.  See our
-[Deploy Workload Locally guide](deploy-workload-local.md) for instructions.
+[Deploy Workload Locally guide](../workloads/deploy-workload-local.md) for instructions.
 
 ## Clean Up
 

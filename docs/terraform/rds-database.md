@@ -11,9 +11,9 @@ You'll need an active AWS account to follow this guide.
 ## Prerequisites
 
 You'll need a Threeport control plane for this guide.  Follow the [Install
-Threeport Locally guide](../../install/install-threeport-local) to set that up a
+Threeport Locally guide](../install/install-threeport-local.md) to set that up a
 local control plane or the [Install Threeport on AWS
-guide](../../install/install-threeport-aws) for a remote control plane.  Either
+guide](../install/install-threeport-aws.md) for a remote control plane.  Either
 will work.
 
 ## Work Space
@@ -289,6 +289,6 @@ Therein lies one of the
 challenges with Terraform: programmatically providing outputs from Terraform as
 inputs to another operation to deploy a workload that connects to that DB.  In
 the near future, we will provide guides on how to use the [Threeport
-SDK](../../sdk/sdk-intro) to wire these concerns together to remove human
+SDK](../sdk/sdk-intro.md) to wire these concerns together to remove human
 copy-paste operations from the process.
 

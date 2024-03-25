@@ -29,7 +29,7 @@ detail.  The control plane consists primarily of:
 
 > Note: the controllers in the diagram below are just abstract examples.  For a
 > complete list of the actual controllers in the Threeport control plane, see
-> the [Control Plane architecture](../control-plane) docs.
+> the [Control Plane architecture](control-plane.md) docs.
 
 ![Threeport Control Plane](../img/ThreeportControlPlaneOverview.png)
 
@@ -74,7 +74,7 @@ environment with all of its dependencies satisfied.
 > calls to the Threeport API to persist that change in the DB and then notify
 > the appropriate controller of the state it needs to reconcile.
 
-See the [Control Plane document](../control-plane) for more detailed information
+See the [Control Plane document](control-plane.md) for more detailed information
 about the control plane.
 
 ## Compute Space
@@ -99,10 +99,10 @@ mechanism to create the environment for the Threeport control plane.
 
 The Threeport CLI, `tptctl` provides that bootstrapping.
 
-See the [tptctl install guide](../../install/install-tptctl) for a guide on
+See the [tptctl install guide](../install/install-tptctl.md) for a guide on
 installing the `tptctl` command line tool.
 
-See the [Remote Threeport guide](../../install/install-threeport-aws) for a
+See the [Remote Threeport guide](../install/install-threeport-aws.md) for a
 walk through on installing Threeport in AWS using `tptctl`.
 
 ![Threeport Bootstrapping](../img/ThreeportBootstrapping.png)
@@ -123,7 +123,7 @@ The `tptctl up` command executes the following steps when installing on AWS:
 A Threeport control plane can also be installed locally on a user's
 workstation using [kind](https://kind.sigs.k8s.io/) for local testing and
 development.  See our [Local Threeport
-guide](../../install/install-threeport-local) for instructions on installing
+guide](../install/install-threeport-local.md) for instructions on installing
 Threeport locally.  With a local Threeport control plane, the user can then
 deploy Kubernetes clusters in the cloud and deploy workloads there.  However,
 this is only recommended for testing and development.  Don't use local Threeport
@@ -150,7 +150,7 @@ Threeport is designed and built upon the following principles:
 
 ## Next Steps
 
-See our [Control Plane document](../control-plane) for more architectural
-detail on the Threeport control plane and the [Threeport Controllers document](../threeport-controllers)
+See our [Control Plane document](control-plane.md) for more architectural
+detail on the Threeport control plane and the [Threeport Controllers document](threeport-controllers.md)
 for information about how Threeport controllers work.
 

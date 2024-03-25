@@ -78,10 +78,10 @@ complex templating to define different instances.
 ## Next Steps
 
 To get a practical understanding of how Threeport manages delivery, check out
-our [Getting Started page](../../getting-started) which provides the steps to
+our [Getting Started page](../getting-started.md) which provides the steps to
 install Threeport and use it to deploy a sample application.
 
-Also, the [Namespace Management guide](../../workloads/namespaces) provides
+Also, the [Namespace Management guide](../workloads/namespaces.md) provides
 instructions for creating workload definitions and deriving multiple instances
 from that definition.  It includes important namespacing considerations for
 workloads in this context.
