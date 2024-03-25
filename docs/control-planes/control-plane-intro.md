@@ -39,11 +39,7 @@ has a `ControlPlaneInstance` object stored in its database that represents
 itself (as distinct from control plane instances that are created separately),
 this information is also represented on this object.  This object also records
 whether it is a "Genesis" control plane, i.e. was bootstrapped with tptctl
-rather than deployed as a child of another Threeport control plane.  This object
-also stores the connection information to the Threeport API for the control
-plane instance as well as the Kubernetes runtime instance where it is running.
-The "parent" control plane instance is optionally stored as along with any
-"child" control planes that are deployed from an control plane instance.
+rather than deployed as a child of another Threeport control plane.
 
 Reference:
 [ControlPlaneInstance](https://pkg.go.dev/github.com/threeport/threeport/pkg/api/v0#ControlPlaneInstance)
