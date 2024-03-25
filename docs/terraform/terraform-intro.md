@@ -14,7 +14,7 @@ different conditions.  It is inferior to a general purpose programming language
 in this respect.  Additionally, there are commonly outputs from the provisioned
 resources that need to be plumbed into other configs - such as for workloads.
 This output must be captured and stored in a way that it can be used elsewhere.
-This interoperability with other parts of a system must be solved for and are
+This interoperability with other parts of a system must be solved for and is
 not ideal.
 
 That said, Terraform can be useful for relatively simple use cases with limited
