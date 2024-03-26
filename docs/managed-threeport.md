@@ -1,7 +1,7 @@
 # Managed Threeport
 
 Threeport itself is a complex distributed software system that is trivial to
-deploy for testing and development, but non-trivial to manage, upgrade, maintain
+use and deploy for testing or development, but non-trivial to manage, upgrade, maintain
 and troubleshoot when problems arise.
 
 ## Commercial Service Offerings
