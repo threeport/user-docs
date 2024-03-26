@@ -30,7 +30,7 @@ Threeport extension is as follows:
    built-in utilities and makes it available for testing and feedback.
 
 > Organizations that support open source and community engagement can make their
-> extensions publicly available in the case they may be applicable to other use
+> extensions publicly available in case they may be applicable to other use
 > cases.
 
 ## Coming Soon
