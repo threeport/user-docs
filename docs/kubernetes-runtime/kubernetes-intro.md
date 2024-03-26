@@ -12,8 +12,8 @@ docs](https://kubernetes.io/docs/home/).
 
 ## Alternative Runtimes
 
-In the future, support could be added for alternative runtime environments, such
-as machines, i.e. deploying directly to a server using a machine image.
+It is possible to add support for alternative runtime environments such as machines, i.e.
+deploying directly to a server using a machine image.
 
 Alternative runtimes are not on the Threeport roadmap but could be incorporated.
 
