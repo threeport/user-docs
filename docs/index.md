@@ -108,7 +108,7 @@ something like this:
    controller.
 0. When the custom workload is created, Threeport deploys all the components of
    the application, stitching all the components together to produce a running,
-   available application as soon as all resources are provisioned.  In this
+   available application as soon as all resources are provisioned.  In the above
    example a front-end component is deployed with TLS termination and network
    ingress from the public internet plumbed through an AWS load balancer.  The
    back end workload is deployed and connected to a new AWS RDS database that is
