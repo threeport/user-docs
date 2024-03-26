@@ -11,7 +11,7 @@ deployments or when using community-supported projects that have Helm charts
 available.  However, the templating used by Helm breaks down in sophisticated,
 production environments when the templates become overwhelmed with conditionals
 and loops.  In more advanced use-cases, we recommend using custom Kubernetes
-Operators and/or Threeport controllers to programmatically manage complex
+operators and/or Threeport controllers to programmatically manage complex
 configuration of software delivery.  See our documentation on [Threeport
 Extensions](../concepts/extensions.md) for more information on
 this topic.

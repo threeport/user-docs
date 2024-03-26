@@ -33,8 +33,11 @@ This results in the following:
 * When platform engineers join an organization, they have limited skill transfer
   from earlier work they've engaged in.  The time-to-productivity is thus
   reduced.
+* Conventional platform engineering tools commonly use domain-specific languages
+  and not general-purpose programming languages, which further silos platform
+  engineering from collaboration with developers.
 
-Threeport exists to solve this problem.  It provides a framework and software
+Threeport exists to solve these problems.  It provides a framework and software
 development kit for building custom cloud native application platforms without
 starting from scratch.  This enables collaboration between organizations on the
 same or similar problem sets, reduces the expense in creating such a platform,
@@ -95,35 +98,35 @@ the best outcome.  It is most appropriate for the highest value
 revenue-generating applications, especially those that require a large number of
 Kubernetes resources to deploy them.
 
-This approach involves developing a custom [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+This approach involves developing a custom [Kubernetes operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 that is leveraged by Threeport.  It reduces complexity in the Threeport
 controller development and offloads much of the workload management logic to
-the Kubernetes Operator where it is more effective.
+the Kubernetes operator where it is more effective.
 
-In this case, Threeport objects to provision AWS managed services, e.g. RDS, as
-well as support services such as for Domain Names and Gateways can still be used
-by the custom Threeport controller.  However, by leveraging a Kubernetes
-Operator, the custom Threeport controller need only create a single Workload
-object that defines the "CustomApp" Kubernetes resource, shown in this diagram in
-dark orange.  On the Kubernetes cluster, the Custom App Operator, shown in light
-orange in this diagram, deploys all of the individual Kubernetes resources in
-response to that CustomApp resource being created, updated or deleted.
+In this case, native Threeport objects can be used to provision AWS managed
+services, e.g. RDS, as well as support services, e.g. Domain Names and Gateways.
+However, by leveraging a Kubernetes operator, the custom Threeport controller
+need only create a single Workload object that defines the "CustomApp"
+Kubernetes resource, shown in this diagram in dark orange.  On the Kubernetes
+cluster, the Custom App Operator, shown in light orange in this diagram, deploys
+all of the individual Kubernetes resources in response to that CustomApp
+resource being created, updated or deleted.
 
 ![Advanced App Orchestration](../img/AdvancedAppOrchestration.png)
 
 The advantages to this approach are as follows:
 
 * The logic for managing the application is separated between
-  the Threeport controller and the Kubernetes Operator.  This division of
+  the Threeport controller and the Kubernetes operator.  This division of
   concerns assists in reducing complexity in any single component.  This also
   allows for evolving functionality to be implemented at the correct level:
-    * Single in-cluster concerns live in the Kubernetes Operator.
+    * Single in-cluster concerns live in the Kubernetes operator.
     * Multi-cluster concerns such as multi-cluster deployments live in the
       Threeport controller.
-* Kubernetes Operators maintain a Watch on the custom resources - the CustomApp
+* Kubernetes operators maintain a Watch on the custom resources - the CustomApp
   resource in this example - and will make updates to the child Kubernetes
   resources as needed when changes occur to the CustomApp resource.  The
-  Kubernetes Operator can also ensure that no changes are made directly to those
+  Kubernetes operator can also ensure that no changes are made directly to those
   child Kubernetes resources and revert them if changes occur.  This is not
   appropriate to do at the Threeport layer.
 * Engineering responsibility can be more distributed across distinct concerns.
@@ -131,14 +134,14 @@ The advantages to this approach are as follows:
   this arrangement works well since there will be two distinct software
   projects:
     * The Threeport controller
-    * The Kubernetes Operator
+    * The Kubernetes operator
 
 The disadvantages:
 
 * There will be two distinct software projects to manage:
     * The Threeport controller
-    * The Kubernetes Operator
-* The implementation for both Threeport controllers and Kubernetes Operators need to
+    * The Kubernetes operator
+* The implementation for both Threeport controllers and Kubernetes operators need to
   be well understood.
 * The API contracts between the two projects need to be maintained and managed
   well.

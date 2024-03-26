@@ -44,7 +44,7 @@ during reconciliation.
 ## Threeport Agent
 
 The Threeport agent is a [Kubernetes
-Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 built using the [Kubebuilder
 SDK](https://github.com/kubernetes-sigs/kubebuilder).  It is informed about
 Threeport-managed workloads using a custom Kubernetes resource.  It then places
@@ -211,10 +211,10 @@ The workload controller deploys a defined set of Kubernetes resources to a
 nominated (or default) Kubernetes runtime instance.  This controller is quite
 rudimentary in that the user is required to define the granular detail of all
 Kubernetes resources that constitute their workload.  However, it is useful in
-simple implementations.  When paired with a Kubernetes Operator or a custom
-Threeport controller that abstracts the details of the Kubernetes resources, it
-is a vital mechanism.  It is the primary interface with the Kubernetes API in
-Threeport.
+simple implementations.  When paired with a [Kubernetes operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+or a custom Threeport controller that abstracts the details of the Kubernetes
+resources, it is a vital mechanism.  It is the primary interface with the
+Kubernetes API in Threeport.
 
 ## Next Steps
 

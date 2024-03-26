@@ -4,7 +4,7 @@ This document describes the Threeport approach to managing a fleet of Kubernetes
 clusters.
 
 There have been many attempts at federating Kubernetes using Kubernetes itself,
-i.e. Kubernetes Operators that install and keep an inventory of clusters as well
+i.e. Kubernetes operators that install and keep an inventory of clusters as well
 as manage multi-cluster app deployments.  Kubernetes was designed to be a
 data center-level abstraction and it performs this function very well.  It was
 not designed to be a global software fleet abstraction and it has inherent

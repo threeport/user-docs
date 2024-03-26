@@ -64,7 +64,7 @@ The green arrows show the calls from the reconcilers to the Kubernetes API in
 the Compute Space.  The Kubernetes API provides the primary interface point for
 the reconcilers to the compute space.  No calls are made into processes or
 workloads in those clusters as a rule.  Any custom operations that are not
-satisfied by Kubernetes are achieved with custom Kubernetes Operators that can
+satisfied by Kubernetes are achieved with custom Kubernetes operators that can
 be configured and triggered through the Kubernetes API.
 
 The purple arrows show the calls back to the API to update other related objects
