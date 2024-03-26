@@ -13,6 +13,20 @@ services needed for the application to run successfully.
 
 ![Threeport Stack](../img/ThreeportStack.png)
 
+## Foundational Principles
+
+Threeport is designed and built upon the following principles:
+
+* General purpose programming languages like Go are superior to DSLs and
+  templates for defining the behavior of complex systems.
+* Git repos are not great for storing the configuration of complex systems.  For
+  a system that is driven by software controllers, a database is more efficient
+  for both reads and writes by those controllers.
+* Use progressive disclosure in the abstractions available to users.  Dead
+  simple use cases should be trivial to configure and execute.  However, complex
+  use cases should be supported by allowing users greater level of
+  configurability in the underlying systems when needed.
+
 ## Control Plane
 
 The diagram below illustrates the Threeport control plane in a little more
@@ -128,20 +142,6 @@ Threeport locally.  With a local Threeport control plane, the user can then
 deploy Kubernetes clusters in the cloud and deploy workloads there.  However,
 this is only recommended for testing and development.  Don't use local Threeport
 control planes to run important production workloads.
-
-## Foundational Principles
-
-Threeport is designed and built upon the following principles:
-
-* General purpose programming languages like Go are superior to DSLs and
-  templates for defining the behavior of complex systems.
-* Use progressive disclosure in the abstractions available to users.  Dead
-  simple use cases should be trivial to configure and execute.  However, complex
-  use cases should be supported by allowing users greater level of
-  configurability in the underlying systems when needed.
-* Git repos are not great for storing the configuration of complex systems.  For
-  a system that is driven by software controllers, a database is more efficient
-  for both reads and writes by those controllers.
 
 ## Next Steps
 
