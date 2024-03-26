@@ -2,10 +2,10 @@
 
 Threeport controllers perform state reconciliation in the system.  When a user
 deploys a workload, a change is made to the data store through the Threeport
-RESTful API.  Once that change has persisted, the API notifies the appropriate
-controller via the notification broker.  The Threeport controller responsible
-for deploying the workload then executes the action and updates the status of
-the object in the API.
+RESTful API.  Once that change has been successfully persisted, the API
+notifies the appropriate controller via the notification broker.  The Threeport
+controller responsible for deploying the workload then executes the action and
+updates the status of the object in the API.
 
 The following diagram illustrates this process for the workload controller as an
 example.
