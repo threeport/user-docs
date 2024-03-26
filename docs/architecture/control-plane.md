@@ -211,7 +211,7 @@ The workload controller deploys a defined set of Kubernetes resources to a
 nominated (or default) Kubernetes runtime instance.  This controller is quite
 rudimentary in that the user is required to define the granular detail of all
 Kubernetes resources that constitute their workload.  However, it is useful in
-simple implementations and, when paired with a Kubernetes Operator or a custom
+simple implementations.  When paired with a Kubernetes Operator or a custom
 Threeport controller that abstracts the details of the Kubernetes resources, it
 is a vital mechanism.  It is the primary interface with the Kubernetes API in
 Threeport.
