@@ -7,10 +7,12 @@ continuous delivery pipelines and GitOps as methods for delivering software.  As
 cloud native has become more ubiquitous, these methods have become increasingly
 insufficient.
 
-Threeport offers a self-service experience to developers.  The developer's
-software delivery is facilitated by DevOps and platform engineering teams, but
-does _not_ put those teams on the day-to-day critical delivery path for
-applications.
+Threeport offers a self-service experience to developers.
+DevOps and platform engineering teams can streamline and facilitate
+the delivery efforts of developers without being on the day-to-day critical
+delivery path.  If deemed necessary, software delivery into critical
+production environments _can_ be delegated to an operations team.  Threeport
+enables smooth software delivery whatever your organization's policies may be.
 
 Fundamentally, Threeport exists to reduce engineering toil, increase resource
 consumption efficiency, and make the most complex software systems manageable by
@@ -55,7 +57,7 @@ in the [Concepts section](concepts/definitions-instances.md).
 
 ![Threeport for DevOps](img/ThreeportForDevOps.png)
 
-Following is an example of this works:
+DevOps supports developers as follows:
 
 0. DevOps creates the definition configurations that can be referenced later by
    developers.  Any number of definitions can be made available for different
