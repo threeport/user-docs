@@ -56,9 +56,9 @@ The commented fields indicate how the observability stack can be customized, but
 that is outside the scope of this guide.  We're going to deploy it with the
 default settings.
 
-The only change you should make is to set the name of the
-`KubernetesRuntimeInstance.Name`.  Get the name of the K8s runtime instance/s you
-have available with this command:
+The only change you should make is to set the `KubernetesRuntimeInstance.Name`
+field.  Get the name of the K8s runtime instance/s you have available with this
+command:
 
 ```bash
 tptctl get kubernetes-runtime-instances
