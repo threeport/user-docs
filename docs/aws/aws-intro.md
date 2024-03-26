@@ -29,6 +29,7 @@ Threeport access to other AWS accounts, you must include an AWS account ID,
 access key ID, and secret access key credentials to authenticate. If you have
 your local AWS config set up to use the `aws` CLI tool you can reference those
 credentials stored on your local file system when creating an external AWS
+account.
 
 You can register and use as many AWS accounts in Threeport as you wish.
 
