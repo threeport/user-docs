@@ -58,8 +58,8 @@ This diagram illustrates the following process:
    is persisted, the request handler sends a notification to the appropriate
    controller/s through NATS Jetstream.
 1. If the request requires some compute infrastructure and/or managed services,
-   the controller responsible for infrastructure services connects to the Infra
-   Provider API to manage that.
+   the controller responsible for infrastructure services connects to the cloud
+   provider API to manage that.
 1. If the requests requires the deployment of a tenant workload, the
    controller responsible for workloads connects to the Kubernetes API to
    instruct its control plane to deploy the containerized workloads.

@@ -156,8 +156,8 @@ controller with Threeport's Helm integration.
 ### Kubernetes Runtime Controller
 
 The Kubernetes runtime controller is used to provision new Kubernetes
-environments for workloads.  It serves as an infra provider agnostic abstraction
-that allows a user to provision environments with the infra provider as a simple
+environments for workloads.  It serves as a cloud provider agnostic abstraction
+that allows a user to provision environments with the cloud provider as a simple
 attribute of the `KubernetesRuntimeDefinition` object.  The
 `KubernetesRuntimeInstance` object is where connection information for each
 cluster is stored and utilized when workloads are deployed to that cluster.
