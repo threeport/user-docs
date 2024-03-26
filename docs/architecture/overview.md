@@ -85,8 +85,9 @@ environment with all of its dependencies satisfied.
 
 > Note: The Threeport controllers never directly interact with each other.
 > Whenever a controller needs work completed by another controller, it makes
-> calls to the Threeport API to persist that change in the DB and then notify
-> the appropriate controller of the state it needs to reconcile.
+> calls to the Threeport API to persist that change in the DB. The Threeport API
+> then notifies the appropriate controller that its respective state needs to be
+> reconciled.
 
 See the [Control Plane document](control-plane.md) for more detailed information
 about the control plane.
