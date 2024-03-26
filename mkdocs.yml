@@ -1,5 +1,6 @@
 site_name: Threeport User Documentation
-site_author: Qleet Engineering
+site_author: Threeport developers
+site_description: Documentation for Threeport application orchestrator
 repo_url: https://github.com/threeport/user-docs
 repo_name: threeport/user-docs
 edit_uri: blob/main/docs/
@@ -98,4 +99,5 @@ markdown_extensions:
   - toc:
       permalink: true
 
-copyright: Copyright &copy; 2022-2024 Qleet.io
+copyright: Copyright &copy; 2022-2024 Threeport.io
+
