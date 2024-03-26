@@ -142,11 +142,16 @@ drawbacks in complex environments since templating is inherently inferior to
 general purpose programming languages.  More on this topic is discussed in the
 [Continuous Delivery & GitOps
 section](../concepts/application-orchestration.md#continuous-delivery-gitops)
-of the Application Orchestration document in another section of these Threeport
-docs.  We much prefer Go programs to construct Kubernetes resources, however,
-when Helm charts are available for open source projects and when they are in
-extensive use by a team, it is valuable to have the option available.  We also
-currently use it to implement observability systems.
+of the Application Orchestration document.  We prefer Go programs to construct
+Kubernetes resources.  However, Helm support is still valuable because many open-source
+charts are available and it is already in extensive use by many teams.
+
+Although we prefer Go to manage Kubernetes resources, we recognize there are
+use-cases where it is more appropriate to use Helm. Threeport's implementation
+of the [Observability Stack](../../observability/observability-intro/) is one
+example.  The requirements for observability line up well with what is already
+provided by open-source Helm charts, so it made more sense to implement this
+controller with Threeport's Helm integration.
 
 ### Kubernetes Runtime Controller
 
