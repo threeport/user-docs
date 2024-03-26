@@ -116,7 +116,7 @@ has such a dependency.
 The following support services are installed on Kubernetes as needed by the
 Gateway controller:
 
-* [Gloo Gateway](https://github.com/solo-io/gloo): the network ingress
+* [Gloo Edge](https://github.com/solo-io/gloo): the network ingress
 controller used by Threeport.
 * [cert-manager](https://github.com/cert-manager/cert-manager): used to
 provision and rotate TLS certificates.
