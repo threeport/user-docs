@@ -154,8 +154,8 @@ The Kubernetes runtime controller is used to provision new Kubernetes
 environments for workloads.  It serves as an infra provider agnostic abstraction
 that allows a user to provision environments with the infra provider as a simple
 attribute of the `KubernetesRuntimeDefinition` object.  The
-`KubernetesRuntimeInstance` object is where the connection information for each
-cluster API is stored and utilized when workloads are deployed to that cluster.
+`KubernetesRuntimeInstance` object is where connection information for each
+cluster is stored and utilized when workloads are deployed to that cluster.
 
 ### Observability Controller
 
