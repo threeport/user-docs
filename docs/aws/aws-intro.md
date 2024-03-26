@@ -20,15 +20,15 @@ provision these separately.
 
 An AWS Account object allows you to register AWS account information with
 Threeport so that it can be used to deploy runtimes, workloads and managed
-services in that account.  You must include your AWS account ID as well as the
-access key ID and secret access key credentials to authenticate to your AWS
-account.  If you have your local AWS config set up to use the `aws` CLI tool you
-can reference those credentials stored on your local file system when creating an
-account if you wish.
-
-You can set the default region in AWS you wish to use for the account as well as
-nominate an AWS account as the default account to use if one isn't specified
-when deploying a particular resource.
+services in that account.  A
+[genesis](../../control-planes/control-plane-intro#control-plane-instance)
+Threeport control plane deployed to AWS will utilize AWS best-practice
+[IRSA](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
+authentication to manage resources within its own AWS account.  To give
+Threeport access to other AWS accounts, you must include an AWS account ID,
+access key ID, and secret access key credentials to authenticate. If you have
+your local AWS config set up to use the `aws` CLI tool you can reference those
+credentials stored on your local file system when creating an external AWS
 
 You can register and use as many AWS accounts in Threeport as you wish.
 
