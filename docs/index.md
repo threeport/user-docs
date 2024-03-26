@@ -68,10 +68,13 @@ DevOps supports developers as follows:
    developer doesn't have to worry about any resource configuration since DevOps
    took care of this.  They only provide runtime parameters such as which
    Kubernetes runtime to use for their workload.
-0. Threeport deploys the Kubernetes runtime and, if needed, the RDS database, the
-   gateway controller along with its load balancer and the workload itself.  All
-   dependencies are connected so that the workload is immediately available to
-   the end user as soon as the resources are up.
+0. Threeport deploys a kubernetes runtime and any dependencies that may be
+   needed. These dependencies can include kubernetes manifests, gateway
+   resources such as load balancers, and managed AWS services such as RDS.  All
+   dependencies are connected and the workload is immediately available to the
+   end user as soon as resources are up. An example configuration can be found
+   on the Threeport GitHub repository
+   [here](https://github.com/threeport/threeport/blob/main/samples/wordpress-workload-remote.yaml).
 
 ## Threeport for Platform Engineers
 
