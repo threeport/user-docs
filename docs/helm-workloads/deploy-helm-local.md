@@ -96,19 +96,19 @@ HelmWorkloadInstance:
 
 Create the default Helm workload instance:
 
-```
+```bash
 tptctl create helm-workload-instance --config wordpress-helm-workload-instance-default.yaml
 ```
 
 Now you can view the Helm workload you have running.
 
-```yaml
+```bash
 tptctl get helm-workloads
 ```
 
 Your output should look similar to this:
 
-```
+```bash
 NAME           HELM WORKLOAD DEFINITION     HELM WORKLOAD INSTANCE     KUBERNETES RUNTIME INSTANCE     STATUS       AGE
 wordpress      wordpress                    wordpress-default          threeport-dev-0                 Healthy      1m3s
 ```
