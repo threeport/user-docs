@@ -111,8 +111,7 @@ This should bring you to the Grafan login.  Enter `admin` for the username and
 
 ## Metrics
 
-On the left, look for a link that says `Kubernetes / Compute Resources / Pod`
-in the "Dashboards" section.  Click that link.
+On the left, click on the hamburger menu and navigate to `Dashboards` then `Kubernetes / Compute Resources / Pod`.
 
 At the top of the dashboard, you can select the namespace and pod for which to
 view metrics.
