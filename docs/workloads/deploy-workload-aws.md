@@ -8,6 +8,7 @@ manage several dependencies for it:
 * DNS record using AWS Route53
 * Managed database using AWS RDS
 * Managed object storage using AWS S3
+* Managed secrets using AWS Secrets Manager
 
 ## Prerequisites
 
@@ -43,7 +44,7 @@ Workload:
   Name: "wordpress"
   YAMLDocument: "wordpress-manifest-remote.yaml"
   KubernetesRuntimeInstance:
-    Name: threeport-test
+    Name: eks-k8s-runtime
   AwsRelationalDatabase:
     Name: wordpress-db
     AwsAccountName: default-account
@@ -61,10 +62,20 @@ Workload:
     WorkloadServiceAccountName: s3-client
     WorkloadBucketEnvVar: S3_BUCKET_NAME
   DomainName:
+    Name: example-domain
     Domain: example.com
     Zone: Public
     AdminEmail: admin@example.com
+  Secret:
+    Name: wordpress-secret
+    AwsAccountName: default-account
+    Data:
+      WORDPRESS_PASSWORD: admin_password
+      WORDPRESS_SMTP_PASSWORD: smtp_password
+  # If KubernetesRuntime provider is not AWS, then long-term credentials must
+  # be used to authenticate to AWS
   Gateway:
+    Name: web-service-gateway
     HttpPorts:
       - Port: 80
         HTTPSRedirect: true
@@ -216,6 +227,63 @@ updates.
     Domain: example.com				# <-- set your Route53 hosted zone here
     Zone: Public
     AdminEmail: admin@example.com   # <-- put your email address here
+```
+
+### Secret Configuration
+
+The `Secret` field provides config for managing secret values for the sample
+app. AWS Secrets Manager is currently the only supported provider for secrets
+management and will be used by default by your Threeport control plane.
+
+Threeport handles the integration between secrets and Kubernetes manifests in a
+similar manner to AWS RDS connection credentials. A secret is created in the
+same namespace as the sample app, and the manifests must configure the secret
+values as needed. Below is an example `Secret` configuration:
+
+```yaml
+  Secret:
+    Name: wordpress-secret # <-- note this value
+    AwsAccountName: default-account
+    Data:
+      WORDPRESS_PASSWORD: admin_password     # <-- secret key and value
+      WORDPRESS_SMTP_PASSWORD: smtp_password # <-- secret key and value
+```
+
+`wordpress-manifest-remote.yaml` contains the following snippet, which shows how
+secret values map into the sample app's Kubernetes manifest.
+
+
+```yaml
+          env:
+          ...
+            - name: WORDPRESS_PASSWORD         # <-- environment variable expected by app
+              valueFrom:
+                secretKeyRef:
+                  name: wordpress-secret
+                  key: WORDPRESS_PASSWORD      # <-- secret data key
+            - name: WORDPRESS_SMTP_PASSWORD    # <-- environment variable expected by app
+              valueFrom:
+                secretKeyRef:
+                  name: wordpress-secret
+                  key: WORDPRESS_SMTP_PASSWORD # <-- secret data key
+          ...
+```
+
+Below is an example of the secret that is inserted into the app's namespace by
+the Threeport Control Plane. This object is managed on behalf of the user by
+Threeport and provided here for illustration purposes only. The keys within
+the `data` field are what must be referenced by the user-supplied manifest, as
+illustrated above.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: wordpress-secret
+type: Opaque
+data:
+  WORDPRESS_PASSWORD: YWRtaW5fcGFzc3dvcmQ=      # encoded value of "admin_password"
+  WORDPRESS_SMTP_PASSWORD: c210cF9wYXNzd29yZA== # encoded value of "smtp_password"
 ```
 
 ### Gateway Configuration
