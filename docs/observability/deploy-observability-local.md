@@ -28,7 +28,7 @@ cd threeport-observability-test
 Download a sample workload config as follows:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/0.5/samples/observability/observability-stack.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/observability/observability-stack.yaml
 ```
 
 You now have the config for an observability stack on your file system.  This is
