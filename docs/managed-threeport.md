@@ -9,6 +9,7 @@ and troubleshoot when problems arise.
 * [Qleet](https://qleet.io/) is currently the only service provider that offers
   fully managed Threeport control planes.  The originators, developers and
   maintainers of the Threeport project are on the engineering team at Qleet.
+  It's free to get started.
 
 If your company launches a managed Threeport service and wishes to be listed
 here, open a PR on the [user-docs repo](https://github.com/threeport/user-docs).

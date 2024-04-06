@@ -33,7 +33,7 @@ cd threeport-test
 Download a sample workload config as follows:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/wordpress-workload-remote.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/workload/wordpress-workload-remote.yaml
 ```
 
 You now have the workload config on your local file system.  If you open the file you'll
@@ -72,8 +72,6 @@ Workload:
     Data:
       WORDPRESS_PASSWORD: admin_password
       WORDPRESS_SMTP_PASSWORD: smtp_password
-  # If KubernetesRuntime provider is not AWS, then long-term credentials must
-  # be used to authenticate to AWS
   Gateway:
     Name: web-service-gateway
     HttpPorts:
@@ -98,7 +96,7 @@ The `YAMLDocument` field refers to another file with the Kubernetes resource
 manifests.  Download that file as well:
 
 ```bash
-curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/wordpress-manifest-remote.yaml
+curl -O https://raw.githubusercontent.com/threeport/threeport/main/samples/workload/wordpress-manifest-remote.yaml
 ```
 
 ### Kubernetes Runtime Configuration
@@ -108,7 +106,7 @@ kubernetes-runtime-instances` to see which runtimes are available.
 
 ```yaml
   KubernetesRuntimeInstance:
-    Name: threeport-test        # <-- set this value
+    Name: eks-k8s-runtime        # <-- set this value
 ```
 
 You can also remove this config to simply use the default runtime.
@@ -224,6 +222,7 @@ updates.
 
 ```yaml
   DomainName:
+    Name: example-domain
     Domain: example.com				# <-- set your Route53 hosted zone here
     Zone: Public
     AdminEmail: admin@example.com   # <-- put your email address here
@@ -232,8 +231,10 @@ updates.
 ### Secret Configuration
 
 The `Secret` field provides config for managing secret values for the sample
-app. AWS Secrets Manager is currently the only supported provider for secrets
-management and will be used by default by your Threeport control plane.
+app.
+
+> Note: AWS Secrets Manager is currently the only supported provider for secrets
+> management and will be used by default by your Threeport control plane.
 
 Threeport handles the integration between secrets and Kubernetes manifests in a
 similar manner to AWS RDS connection credentials. A secret is created in the
@@ -248,6 +249,15 @@ values as needed. Below is an example `Secret` configuration:
       WORDPRESS_PASSWORD: admin_password     # <-- secret key and value
       WORDPRESS_SMTP_PASSWORD: smtp_password # <-- secret key and value
 ```
+
+The `Name` field in an arbitrary name provided by the user.
+
+> Important: The `Name` value determines what the secret will be called in AWS
+> Secrets Manager.  If the provided `Name` value is already in use, Threeport
+> will not be able to create it.  Furthermore, AWS Secrets Manager reserves the
+> name for a restoration grace period (minimum of 7 days).  So if you delete a
+> secret and then attempt to re-create it with the same name, it will fail if
+> that grace period has not expired.
 
 `wordpress-manifest-remote.yaml` contains the following snippet, which shows how
 secret values map into the sample app's Kubernetes manifest.
@@ -269,7 +279,7 @@ secret values map into the sample app's Kubernetes manifest.
           ...
 ```
 
-Below is an example of the secret that is inserted into the app's namespace by
+Below is an example of the Kubernetes secret that is inserted into the app's namespace by
 the Threeport Control Plane. This object is managed on behalf of the user by
 Threeport and provided here for illustration purposes only. The keys within
 the `data` field are what must be referenced by the user-supplied manifest, as
@@ -324,7 +334,7 @@ Threeport will now do the following:
 * If you specified a `DomainName` config, Threeport will install
   [external-dns](https://github.com/kubernetes-sigs/external-dns) on your EKS
   cluster and instruct it to configure Route53.
-* Install [Gloo Gateway](https://github.com/solo-io/gloo) for network ingress
+* Install [Gloo Edge](https://github.com/solo-io/gloo) for network ingress
   control and configure it for your app.
 * Install [cert-manager](https://github.com/cert-manager/cert-manager) to
   provision and rotate TLS certificates for the sample app.
@@ -423,6 +433,8 @@ exit
 
 ## Clean Up
 
+### WordPress Workload
+
 Threeport will not delete a Kubernetes cluster with workload instances running
 by default.  This prevents inadvertently deleting apps that need to continue
 running.
@@ -439,16 +451,43 @@ Delete the WordPress workload instance.
 tptctl delete workload-instance -n wordpress
 ```
 
+### Support Service Workloads
+
 If you used a `DomainName` config, ensure your DNS records have been removed (it
 can take a minute or two for external-dns to clean those up), then delete the
 gloo-edge and external-dns workloads.
 
-Delete the Gloo Gateway and external-dns workload instances.
+Delete the Gloo Edge, external-dns and external-secrets workload instances.
 
 ```bash
 tptctl delete workload-instance -n gloo-edge-threeport-test # name may differ
 tptctl delete workload-instance -n external-dns-threeport-test # name may differ
+tptctl delete workload-instance -n external-secrets-threeport-test  # name may difer
 ```
+
+### Secret Definition
+
+To delete the secret from AWS Secrets Manager, first check the name of the
+secret definition:
+
+```bash
+tptctl get secret-definitions
+```
+
+You should see something like this in the output:
+
+```bash
+NAME                  AGE
+wordpress-secret      24m19s
+```
+
+Then delete it by name to remove it from AWS Secrets Manager:
+
+```bash
+tptctl delete secret-definition -n wordpress-secret
+```
+
+### Threeport Control Plane
 
 Uninstall Threeport:
 
@@ -467,4 +506,13 @@ Remove the test configs from you file system:
 cd ../
 rm -rf threeport-test
 ```
+
+## Next Steps
+
+Now that you've tried out Threeport with a sample WordPress workload, we suggest
+you try it out with one of your workloads.  Get in touch via
+[Discord](https://discord.com/invite/Fwr2sc9Dfp) if you have any questions.
+
+Also, check out the [Managed Threeport](../managed-threeport.md) offerings to
+fast-track getting Threeport into use at your organization.
 
