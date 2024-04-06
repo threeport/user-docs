@@ -27,6 +27,6 @@ Reference: [SecretInstance](https://pkg.go.dev/github.com/threeport/threeport/pk
 
 ## Next Steps
 
-Our [Deploy Workload with Secret on AWS guide](deploy-workload-aws-secret.md)
+Our [Deploy Workload with Secret on AWS guide](../workloads/deploy-workload-aws.md)
 walks through the use of secrets with workloads on Threeport.
 

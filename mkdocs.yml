@@ -43,7 +43,6 @@ nav:
       - 'Introduction': 'gateways/gateway-intro.md'
     - Secrets:
       - 'Introduction': 'secrets/secrets-intro.md'
-      - 'Remote Workload With Secret': 'secrets/deploy-workload-aws-secret.md'
     - Observability:
       - 'Introduction': 'observability/observability-intro.md'
       - 'Local Observability': 'observability/deploy-observability-local.md'
