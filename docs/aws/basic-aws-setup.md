@@ -1,5 +1,7 @@
-# AWS Account Setup
+# Basic AWS Setup
 
+If you need to configure your threeport to manage resources within the same aws account, you can create the required aws-account within threeport as follows:
+ 
 To get started, construct a config with the required fields. Here is an example of what this config looks like:
 
 ```yaml

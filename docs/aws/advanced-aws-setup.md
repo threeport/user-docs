@@ -1,6 +1,7 @@
-# AWS Cross-Account Access
+# Advanced AWS Setup
 
-Threeport control-planes can be configured to manage resources in a separate AWS account.
+Threeport can be configured to manage resources in an AWS account that is seperate from the one it is currently deployed in.
+When wanting to manage a kubernetes runtime and subsequently, a workload in a external AWS account, use the following way to setup AWS cross account access:
 
 ## Prerequisites
 
