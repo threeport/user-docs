@@ -35,6 +35,7 @@ nav:
     - AWS:
       - 'Introduction': 'aws/aws-intro.md'
       - 'IAM Permissions': 'aws/aws-iam.md'
+      - 'Account Setup': 'aws/aws-account-setup.md'
       - 'Cross Account Access': 'aws/aws-cross-account-access.md'
     - Terraform:
       - 'Introduction': 'terraform/terraform-intro.md'
