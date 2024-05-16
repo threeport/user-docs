@@ -1,4 +1,6 @@
-# AWS Account Setup
+# Basic AWS Setup
+
+Use this documentation to configure Threeport to manage resources within the same AWS account.  If you need to manage workloads in a different AWS account from the one Threeport is deployed in, follow the [Advanced AWS Setup guide](../aws/advanced-aws-setup.md)
 
 To get started, construct a config with the required fields. Here is an example of what this config looks like:
 
